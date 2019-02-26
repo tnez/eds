@@ -1,0 +1,25 @@
+{
+  "name": "eds--acceptance",
+  "version": "0.1.0",
+  "description": "Acceptance testing for EDS.",
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "cy:run:record": "cypress run --record",
+    "start": "json-server db.json",
+    "test": "run-p --race start cy:run",
+    "test:ci": "run-p --race start cy:run:record"
+  },
+  "dependencies": {
+    "cypress": "^3.1.5",
+    "npm-run-all": "^4.1.5"
+  },
+  "devDependencies": {
+    "json-server": "^0.14.2"
+  }
+}
