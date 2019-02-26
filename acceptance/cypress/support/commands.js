@@ -23,3 +23,25 @@
 //
 // -- This is will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('query', ({ query, variables }) =>
+  cy.request({
+    method: 'POST',
+    url: '/graphql',
+    body: {
+      query,
+      variables
+    }
+  })
+)
+
+Cypress.Commands.add('mutation', ({ mutation, variables }) =>
+  cy.request({
+    method: 'POST',
+    url: '/graphql',
+    body: {
+      mutation,
+      variables
+    }
+  })
+)
