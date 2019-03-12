@@ -1,21 +1,12 @@
-const { ApolloServer, gql } = require('apollo-server')
+const { ApolloServer } = require('apollo-server')
+const schema = require('./schema')
 
-const typeDefs = gql`
-  type Query {
-    healthz: String
-  }
-`
+function start() {
+  const server = new ApolloServer({ schema })
 
-const resolvers = {
-  Query: {
-    healthz: () => 'Hello world!'
-  }
+  server
+    .listen()
+    .then(({ url }) => console.log(`gateway running at: ${url}`))
 }
 
-const server = new ApolloServer({ typeDefs, resolvers })
-
-server
-  .listen()
-  .then(({ url }) =>
-    console.log(`gateway up and running at ${url}`)
-  )
+start()

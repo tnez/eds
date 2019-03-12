@@ -1,18 +1,16 @@
 {
-  "name": "eds--gateway",
+  "name": "eds",
   "version": "0.1.0",
-  "description": "",
+  "description": "An opinionated starter for **event-driven** projects.",
   "keywords": [],
+  "author": "",
   "license": "UNLICENSED",
   "private": true,
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "apollo-server": "^2.4.8",
-    "graphql": "^14.1.1",
-    "grpc-promise": "^1.4.0",
-    "ramda": "^0.26.1"
+  "devDependencies": {
+    "protoc-gen-grpc": "^1.2.3"
   }
 }
